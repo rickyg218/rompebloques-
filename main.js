@@ -12,6 +12,7 @@ var rightPressed = false;
 var leftPressed = false;
 var blocks = [];
 var score = 0;
+var myMusic;
 
 window.onload=function(){
     console.log('hello');
@@ -195,6 +196,8 @@ function startGame(){
     var framesPerSecond =60;
     interval = setInterval(updateGame,1000/framesPerSecond)
     console.log(blocks)
+    myMusic = new sound("sound/Stranger-Thing-theme-Song.mp3");
+    myMusic.play();
 }
 
 function drawBlocks(){
@@ -231,4 +234,22 @@ if(score == blocks) {
     alert("YOU WIN, CONGRATULATIONS!");
     document.location.reload();
 }
+
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+
+
 
