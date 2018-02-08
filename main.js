@@ -184,7 +184,7 @@ function Block(x,y,width,height,state = true){
     }
 
     this.crashWith = function(){
-        return  !(this.x < ballX + 10) &&
+        return  (this.x < ballX + 10) &&
                 (this.x + this.w > ballX) &&
                 (this.y < ballY + 10) &&
                 (this.y + this.h > ballY);
@@ -209,7 +209,7 @@ function drawBlocks(){
 function removeBlock(){
     blocks.forEach(function(block){
         if(block.crashWith()){
-            console.log(block.crashWith());
+            //console.log(block.crashWith());
             block.color = 'yellow';
             var i = blocks.indexOf(block);
             blocks.splice(i,1);
