@@ -1,0 +1,23 @@
+body{
+    background-image:url("/Users/EnriqueGarcia/Desktop/insert.jpg");
+    display: cover;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+button{
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width:200px;
+    height: 75px;
+    font-size: 2em;
+    position: absolute;
+    left:50%;
+    top:50%;
+    border-radius: 20px;
+    background-color: #f9d566;
+    font-weight: 600;
+}
+#gameCanvas{
+    position: relative;
+}
